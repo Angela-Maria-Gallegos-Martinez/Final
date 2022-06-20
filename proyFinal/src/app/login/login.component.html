@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="card text-center">
+        <div class="card-header">
+            <b>Login</b>
+        </div>
+        <div class="card-body p-4">
+            <form #LoginForm="ngForm" (ngSubmit)="registerUser(LoginForm.value)" [formGroup]="mdatos">
+                <label style="float: left">Email</label>
+                <span *ngIf="this.mdatos.get('mail')?.errors?.['required']" class="texto"
+                    style="color: maroon; float: right;">
+                    (El mail no puede quedar vacío)
+                </span>
+                <span *ngIf="this.mdatos.get('mail')?.errors?.['email']" class="texto"
+                    style="color: maroon; float: right;">
+                    (El mail no es válido)
+                </span>
+                <input class="form-control m-2" type="text" ngModel id="email" name="email" placeholder="E-mail"
+                    formControlName="mail">
+                <label style="float: left">Password</label>
+                <span *ngIf="this.mdatos.get('pass')?.errors?.['required']" class="texto"
+                    style="color: maroon; float: right;">
+                    (La contraseña no puede quedar vacío)
+                </span>
+                <span *ngIf="this.mdatos.get('pass')?.errors?.['minlength']" class="texto"
+                    style="color: maroon; float: right;">
+                    (Debe tener minimo 8 caracteres)
+                </span>
+                <input class="form-control m-2" type="password" ngModel id="password" name="password"
+                    placeholder="Password" formControlName="pass">
+                <input class="form-control bg-primary m-2" t type="submit" id="saveData" name="singup_submit"
+                    value="sing in">
+            </form>
+        </div>
+    </div>
+</div>

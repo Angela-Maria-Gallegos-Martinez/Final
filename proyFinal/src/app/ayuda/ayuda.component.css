@@ -1,0 +1,156 @@
+main {
+    width: 98%;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.categorias {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 60px;
+}
+
+.categoria {
+    cursor: pointer;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    background: rgb(206, 201, 201);
+    font-weight: 700;
+    color: #bbbbbb;
+    border: 2px solid transparent;
+    transition: .3s ease all;
+}
+
+.categoria:hover {
+    box-shadow: 0 0 13px 0 rgb(185, 185, 185, .25);
+    color: #000;
+}
+
+.categoria img {
+    width: 64px;
+    margin-bottom: 10px;
+}
+
+.categoria.activa {
+    border: 2px solid steelblue;
+    color: #000;
+}
+
+/*-----{}-----*/
+
+.signo {
+    width: 15px;
+}
+
+.container-preguntas {
+    display: none;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.container-preguntas.activo{
+    display: grid;
+}
+
+.container-pregunta {
+    background: white;
+    padding: 20px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .3 ease all;
+    cursor: pointer;
+}
+
+.container-pregunta:hover {
+    box-shadow: 0 0 13px 0 rgb(185, 185, 185, .25);
+}
+
+.container-pregunta.activa {
+    border: 2px solid steelblue;
+}
+
+/**/
+.pregunta {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.respuesta {
+    color: #808080;
+    line-height: 30px;
+    max-height: 0;
+    opacity: 0;
+    transition: .3 ease all;
+}
+
+.container-pregunta.activa .respuesta {
+    opacity: 1;
+    margin-top: 10px;
+}
+
+.container-pregunta.activa img {
+    transform: rotate(45deg);
+}
+
+/*~~~~~~{Responsive Desing}~~~~~~*/
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .categoria{
+        height: 170px;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .categorias{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .categoria{
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+    }
+
+    .nombre{
+        padding-top: 12px;
+    }
+
+    .categoria img{
+        width: 30px;
+        margin-right: 10px;
+        margin-bottom: 0;
+    }
+}
+
+
+@media (max-width: 575px) {
+    .categorias{
+        grid-template-columns: 1fr;
+    }
+
+    .categoria{
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+    }
+
+    .nombre{
+        padding-top: 12px;
+    }
+
+    .categoria img{
+        width: 30px;
+        margin-right: 10px;
+        margin-bottom: 0;
+    }
+}

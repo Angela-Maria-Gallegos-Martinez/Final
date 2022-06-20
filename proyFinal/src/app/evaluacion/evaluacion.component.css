@@ -1,0 +1,29 @@
+.fondo{
+    background: rgba(0, 0, 0, 0.8);
+    height: 470px;
+    border-radius: 5px;
+}
+
+.grafica {
+    margin: 20px 45px;
+}
+
+.titulo{
+    color: rgb(73, 106, 133);
+}
+
+.equipo{
+    font-size: 18px;
+}
+
+button{
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover{
+    color: white;
+    background: #4c547d;
+}

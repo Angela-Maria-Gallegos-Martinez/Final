@@ -1,0 +1,19 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Bienvenido a la Veterinaria JAS</h1>
+
+    <iframe  [src]="video | videoHome:'https://www.youtube.com/embed/'"
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+        
+    <p class="lead">¿Quieres saber de algunos animales que hemos atendido?</p>
+    <p class="lead">Entonces escanea este codigo y te lo mostrara</p>
+    <div class="boton">
+      <button type="button" (click)="aleatorio()" width="35px">Operaciones de animales</button>
+    </div>
+    <div class="container">
+      <ngx-qrcode [elementType]="elementType" [value]="value" cssClass="aclass">
+      </ngx-qrcode>
+    </div>
+  </div>
+</div>

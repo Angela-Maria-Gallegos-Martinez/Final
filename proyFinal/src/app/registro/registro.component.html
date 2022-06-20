@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="card text-center">
+        <div class="card-header">
+            <b>Registro</b>
+        </div>
+        <div class="card-body p-4">
+            <form #LoginForm="ngForm" (ngSubmit)="registerUser(LoginForm.value)" [formGroup]="mdatos">
+                <label style="float: left">Nombre Usuario</label>
+                <span *ngIf="this.mdatos.get('nombre')?.errors?.['required']" class="invalidfeedback"
+                    style="color: maroon; float: right;">
+                    (El nombre es necesario)
+                </span>
+                <span *ngIf="this.mdatos.get('nombre')?.errors?.['minlength']" class="invalidfeedback"
+                    style="color: maroon; float: right;">
+                    (Por lo menos tres caracteres)
+                </span>
+                <input class="form-control m-2" type="text" ngModel id="username" name="username"
+                    placeholder="username" formControlName="nombre">
+                <!-- <label style="float: left">Numero Telefonico</label>
+                <input class="form-control m-2" type="number" ngModel id="numberphone" name="numberphone"
+                    placeholder="numberphone"> -->
+                <label style="float: left">Email</label>
+                <span *ngIf="this.mdatos.get('mail')?.errors?.['required']" class="texto"
+                    style="color: maroon; float: right;">
+                    (El mail no puede quedar vacío)
+                </span>
+                <span *ngIf="this.mdatos.get('mail')?.errors?.['email']" class="texto"
+                    style="color: maroon; float: right;">
+                    (El mail no es válido)
+                </span>
+                <input class="form-control m-2" type="text" ngModel id="email" name="email" placeholder="E-mail" formControlName="mail">
+                <label style="float: left">Password</label>
+                <span *ngIf="this.mdatos.get('pass')?.errors?.['required']" class="texto"
+                    style="color: maroon; float: right;">
+                    (La contraseña no puede quedar vacío)
+                </span>
+                <span *ngIf="this.mdatos.get('pass')?.errors?.['minlength']" class="texto"
+                    style="color: maroon; float: right;">
+                    (Debe tener minimo 8 caracteres)
+                </span>
+                <input class="form-control m-2" type="password" ngModel id="password" name="password"
+                    placeholder="Password" formControlName="pass">
+                <label style="float: left">Confirmar Password</label>
+                <span *ngIf="this.mdatos.get('pass2')?.errors?.['required']" class="texto"
+                    style="color: maroon; float: right;">
+                    (No puede quedar vacío)
+                </span>
+                <!-- <span *ngIf="this.mdatos.get('pass2')?.errors?.['igualPass']"  class="texto" style="color: maroon; float: right;">
+                    (No concuerda la contraseña)
+                </span> -->
+                <input class="form-control m-2" type="password" ngModel id="password2" name="password2"
+                    placeholder="Password" formControlName="pass2">
+                <input class="form-control bg-primary m-2" t type="submit" id="saveData" name="singup_submit"
+                    value="sing in" [disabled]="!mdatos.valid">
+            </form>
+        </div>
+    </div>
+</div>

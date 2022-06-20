@@ -1,0 +1,41 @@
+<div class="conteiner">
+    <h2>¿Que consejos te gustaria saber?</h2>
+    <select [(ngModel)]="selecOpcion" (change)="captura()">
+        <option value="perro">Perro</option>
+        <option value="gato">Gato</option>
+        <option value="hamster">hamster</option>
+        <option value="ave">Ave</option>
+        <option value="pez">Pez</option>
+    </select>
+
+    <p [hidden]="selecOpcion == '0'">Haz seleccionado la opción # {{ verSeleccion }}</p>
+    <div *ngIf="verSeleccion == 'perro'" [hidden]="selecOpcion != 'perro'">
+        <ul>
+            <li *ngFor="let i of vector">{{i | consejos:'perro'}}</li>
+        </ul>
+    </div>
+
+    <div *ngIf="verSeleccion == 'gato'" [hidden]="selecOpcion != 'gato'">
+        <ul>
+            <li *ngFor="let i of vector">{{i | consejos:'gato'}}</li>
+        </ul>
+    </div>
+
+    <div *ngIf="verSeleccion == 'hamster'" [hidden]="selecOpcion != 'hamster'">
+        <ul>
+            <li *ngFor="let i of vector">{{i | consejos:'hamster'}}</li>
+        </ul>
+    </div>
+
+    <div *ngIf="verSeleccion == 'ave'" [hidden]="selecOpcion != 'ave'">
+        <ul>
+            <li *ngFor="let i of vector">{{i | consejos:'ave'}}</li>
+        </ul>
+    </div>
+
+    <div *ngIf="verSeleccion == 'pez'" [hidden]="selecOpcion != 'pez'">
+        <ul>
+            <li *ngFor="let i of vector">{{i | consejos:'pez'}}</li>
+        </ul>
+    </div>
+</div>
